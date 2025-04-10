@@ -1,0 +1,107 @@
+package maven.selenium1;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class TestExcel {
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		//without giving sheet name 
+		
+//		HSSFWorkbook workbook = new HSSFWorkbook();
+//		HSSFSheet sheet = workbook.createSheet();
+//		sheet.createRow(0);
+//		sheet.getRow(0).createCell(0).setCellValue("Hello");
+//		sheet.getRow(0).createCell(1).setCellValue("Kinnu");
+//		sheet.getRow(0).createCell(2).setCellValue("vinnu");
+//		sheet.getRow(0).createCell(3).setCellValue("L");
+//
+//		
+//		sheet.createRow(1);
+//		sheet.getRow(1).createCell(0).setCellValue("Hello");
+//		sheet.getRow(1).createCell(1).setCellValue("Kinnu");
+//		sheet.getRow(1).createCell(2).setCellValue("vinnu");
+//		sheet.getRow(1).createCell(3).setCellValue("manu");
+//		
+//		File file = new File("C:\\Users\\DELL E3470\\Downloads\\pavan\\kinnu_workspace\\selenium1\\ExcelFiles\\Test.xls");
+//		workbook.write(file);
+//		workbook.close();
+		
+		
+		// by giving with sheet name
+//		HSSFWorkbook workbook = new HSSFWorkbook();
+//		HSSFSheet sheet = workbook.createSheet("Testsheet1");
+//		sheet.createRow(0);
+//		sheet.getRow(0).createCell(0).setCellValue("Hello");
+//		sheet.getRow(0).createCell(1).setCellValue("Kinnu");
+//		sheet.getRow(0).createCell(2).setCellValue("yadav");
+//		sheet.getRow(0).createCell(3).setCellValue("pavan");
+//
+//		
+//		sheet.createRow(1);
+//		sheet.getRow(1).createCell(0).setCellValue("Hello");
+//		sheet.getRow(1).createCell(1).setCellValue("Kinnu");
+//		sheet.getRow(1).createCell(2).setCellValue("yadav");
+//		sheet.getRow(1).createCell(3).setCellValue("kinnu");
+//		
+//		File file = new File("C:\\Users\\DELL E3470\\Downloads\\pavan\\kinnu_workspace\\selenium1\\ExcelFiles\\Test1.xls");
+//		workbook.write(file);
+//		workbook.close();
+		
+		
+		
+		//By using Fileoutstream also we can data 
+		
+//		HSSFWorkbook workbook = new HSSFWorkbook();
+//		HSSFSheet sheet = workbook.createSheet("Testsheet2");
+//		sheet.createRow(0);
+//		sheet.getRow(0).createCell(0).setCellValue("Hello");
+//		sheet.getRow(0).createCell(1).setCellValue("Kinnu");
+//		sheet.getRow(0).createCell(2).setCellValue("pavan");
+//		sheet.getRow(0).createCell(3).setCellValue("yadav");
+//
+//		
+//		sheet.createRow(1);
+//		sheet.getRow(1).createCell(0).setCellValue("Hello");
+//		sheet.getRow(1).createCell(1).setCellValue("Kinnu");
+//		sheet.getRow(1).createCell(2).setCellValue("vinnu");
+//		sheet.getRow(1).createCell(3).setCellValue("manu");
+//		
+//		File file = new File("C:\\Users\\DELL E3470\\Downloads\\pavan\\kinnu_workspace\\selenium1\\ExcelFiles\\Test2.xls");
+//		FileOutputStream fos = new FileOutputStream(file);
+//		workbook.write(fos);
+//		workbook.close();
+		
+		
+		// new version of excel
+		
+		XSSFWorkbook workbook = new XSSFWorkbook();
+		XSSFSheet sheet = workbook.createSheet("Testsheet3");
+		sheet.createRow(0);
+		sheet.getRow(0).createCell(0).setCellValue("Hello");
+		sheet.getRow(0).createCell(1).setCellValue("Kinnu");
+		sheet.getRow(0).createCell(2).setCellValue("pavan");
+		sheet.getRow(0).createCell(3).setCellValue("yadav");
+
+		
+		sheet.createRow(1);
+		sheet.getRow(1).createCell(0).setCellValue("Hello");
+		sheet.getRow(1).createCell(1).setCellValue("Kinnu");
+		sheet.getRow(1).createCell(2).setCellValue("vinnu");
+		sheet.getRow(1).createCell(3).setCellValue("manu");
+		
+		File file = new File("C:\\Users\\DELL E3470\\Downloads\\pavan\\kinnu_workspace\\selenium1\\ExcelFiles\\Test3.xlsx");
+		FileOutputStream fos = new FileOutputStream(file);
+		workbook.write(fos);
+		workbook.close();
+		
+	}
+
+}
