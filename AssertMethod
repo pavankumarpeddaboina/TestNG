@@ -1,0 +1,34 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Assertion {
+	
+	
+	
+	@Test
+	public void TestGoogle() throws Exception {
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		
+		driver.get("https://www.google.com/");
+		driver.findElement(By.name("q")).sendKeys("HYR Tutorial", Keys.ENTER);
+		String ExpectedTitle = "HYR Tutorials - Google Search";
+		String ActualTitle = driver.getTitle();
+		Assert.assertEquals(ActualTitle, ExpectedTitle, "Title is missmatched");
+
+		
+		
+		
+		//System.out.println(driver.getTitle());
+		Thread.sleep(3000);
+		driver.close();
+	}
+
+}
